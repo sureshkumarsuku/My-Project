@@ -1,0 +1,15 @@
+<div class="page-wrapper">
+  <section class="toDoBlock container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="mt-5">
+          <h4 class="mb-4">Let's add your things to do!</h4>
+          <app-add-to-do (addToList)="addToList($event)"></app-add-to-do>
+        </div>
+        <div class="mt-5">
+          <app-list-to-do [itemList]="this.itemsList"></app-list-to-do>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

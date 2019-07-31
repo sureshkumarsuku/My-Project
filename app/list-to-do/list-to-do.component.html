@@ -1,0 +1,14 @@
+<ul class="toDoBlock__list col-md-12 rounded board">
+  <li class="shadow-none p-3 mb-5 bg-light rounded" [hidden]="!this.itemListToPopulate.length == 0">No items to do!
+  </li>
+  <li [ngClass]="{'toDoBlock__list--taskDone': item.status}" *ngFor="let item of  this.itemList; let ind = index;"
+    class="shadow-sm p-3 mb-2 rounded">
+    <label class="toDoBlock__list--checkBoxLabel toDoBlock__list--taskText text-monospace">
+      <input [checked]="item.status" (change)="markAsDone(ind, $event)" class="toDoBlock__list--markAsDone"
+        type="checkbox" name="{{item}}">
+      <span class="checkbox-custom rectangular"></span>
+      <span class="toDoBlock__list--desc ml-3">{{item.desc}}</span>
+      <p class="ml-3 toDoBlock__list--close" (click)="removeItem(ind)"></p>
+    </label>
+  </li>
+</ul>

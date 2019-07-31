@@ -1,0 +1,8 @@
+<form ngNativeValidate #toDoData="ngForm" (ngSubmit)="submitListData(toDoData.value); toDoData.reset()">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" name="itemToAdd" ngModel #itemToAdd="ngModel" #descField required>
+    <div class="input-group-append">
+      <button class="toDoBlock--submit btn btn-outline-secondary">+</button>
+    </div>
+  </div>
+</form>
